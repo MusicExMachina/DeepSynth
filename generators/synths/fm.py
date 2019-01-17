@@ -15,15 +15,15 @@ class Operator():
         """
             The Operator Class is a building block of the feed forward graph that the FM synth is built on
             
-            freq:  automation of frequency [float]
-            amp:  automation of amplitude [float]
+            freq:  automation of frequency [float list]
+            amp:  automation of amplitude [float list]
             func:  harmonic function of time representing wave osc. type [func/lambda]
             dependents:  list of operators [list of Operators]
             samplerate: integer as how many samples per second
         """
         #Check freq/amp lists are the same
         if freq.shape[0]!=amp.shape[0]:
-            print("Invalid Frequency/Amplitude Lists!")
+            print("Invalid Frequency/Amplitude Lists! Cannot create Operator.")
             return
         
         self.freq=freq
